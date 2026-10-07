@@ -26,4 +26,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: iOS17-Launcher
-          path: app/build/outputs/apk/debug/*.apk
+          path: '**/*.apk'
