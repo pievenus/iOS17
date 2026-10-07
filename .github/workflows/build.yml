@@ -14,7 +14,7 @@ jobs:
           
       - name: Deep clean broken dependency
         run: |
-          find . -type f \( -name "*.gradle*" -o -name "*.toml" -o -name "*.kt" -o -name "*.java" \) -exec sed -i '/amitshekhar/d; /debug-db/d; /debugDb/d; /DebugDB/d' {} + || true
+          find . -type f \( -name "*.gradle*" -o -name "*.toml" -o -name "*.kt" -o -name "*.java" \) -exec sed -i -e '/amitshekhar/d' -e '/debug-db/d' -e '/debugDb/d' -e '/DebugDB/d' -e '/debug\.db/d' {} + || true
           
       - name: Make gradlew executable
         run: chmod +x ./gradlew
